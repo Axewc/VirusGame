@@ -2,7 +2,7 @@
 /**
  * Carta, clase abstracta de la que exenderan los tipos de carta. 
  */
-public abstract class Carta {
+public abstract class Organo {
 
     /** Nombre de la carta. */
     String nombre;
