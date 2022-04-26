@@ -1,3 +1,7 @@
+package cartas.organos;
+
+import cartas.Organo;
+
 public class Estomago extends Organo {
     
     public Estomago(){
