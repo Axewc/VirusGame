@@ -1,8 +1,8 @@
 package cartas.virus;
 
-import cartas.Virus;
+import cartas.Viru;
 
-public class VirusCuerpo extends Virus {
+public class VirusCuerpo extends Viru {
     public VirusCuerpo() {
         setNombre("Virus Cuerpo");
         setColor("Multicolor");
