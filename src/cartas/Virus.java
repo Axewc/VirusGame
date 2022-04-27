@@ -7,8 +7,6 @@ package cartas;
 
 public abstract class Virus extends Carta {
 
-    
-
 
     @Override
     void descartar() {
