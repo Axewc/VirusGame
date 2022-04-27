@@ -1,8 +1,8 @@
 package cartas.virus;
 
-import cartas.Virus;
+import cartas.Viru;
 
-public class VirusHueso extends Virus {
+public class VirusHueso extends Viru {
 
     public VirusHueso() {
         setNombre("Virus Hueso");
