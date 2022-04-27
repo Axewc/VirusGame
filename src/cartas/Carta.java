@@ -1,9 +1,12 @@
+package cartas;
+
+
 
 
 public abstract class Carta {
     
     /**Nombre de la carta. */
-    String nombre;
+    private String nombre;
 
     /**Ruta de la imagen. */
     String imagen;
@@ -23,7 +26,7 @@ public abstract class Carta {
      * 
      */
     abstract void descartar();
-
+a
     public String getNombre() {
         return nombre;
     }

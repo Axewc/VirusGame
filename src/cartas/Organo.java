@@ -1,3 +1,5 @@
+package cartas;
+
 /**
  * Carta, clase abstracta de la que exenderan los tipos de carta. 
  */
