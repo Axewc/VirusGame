@@ -228,10 +228,10 @@ struct GameView: View {
 **Example ViewModel Structure**:
 ```swift
 // Sources/UI/ViewModels/GameViewModel.swift (Future)
-@MainActor
+@MainActor  // Required: Updates @Published properties which must happen on main thread
 class GameViewModel: ObservableObject {
     @Published private(set) var gameState: GameState
-    private let gameEngine: GameEngine
+    private let gameEngine: GameEngine  // GameEngine itself doesn't need @MainActor
     
     init(gameEngine: GameEngine) {
         self.gameEngine = gameEngine
@@ -251,6 +251,12 @@ class GameViewModel: ObservableObject {
         gameState.players[gameState.currentPlayerIndex]
     }
 }
+
+// Threading Note:
+// - GameEngine: Pure business logic, no @MainActor needed (can run on any thread)
+// - GameViewModel: Must use @MainActor because it updates @Published properties
+//   which SwiftUI observes on the main thread
+// This separation allows GameEngine to be tested without main thread constraints
 ```
 
 ---
@@ -401,7 +407,6 @@ enum GameAction {
     case endTurn
 }
 
-@MainActor
 class GameEngine {
     private(set) var currentState: GameState
     
@@ -722,19 +727,18 @@ struct HandView: View {
 ```
 Tests/
 └── CyberSystemsTests/
-    ├── ModelTests/
-    │   ├── CardTests.swift
-    │   ├── PlayerTests.swift
-    │   └── GameStateTests.swift
-    ├── RulesTests/
-    │   ├── MoveValidatorTests.swift
-    │   ├── ActionResolverTests.swift
-    │   └── WinConditionTests.swift
-    ├── EngineTests/
-    │   └── GameEngineTests.swift
-    └── BotTests/
-        └── BotStrategyTests.swift
+    ├── CyberSystemsTests.swift        # Main test file (placeholder)
+    │
+    # Future test organization (Phase 2+):
+    ├── ModelTests.swift               # Model validation tests
+    ├── MoveValidatorTests.swift       # Move validation tests
+    ├── ActionResolverTests.swift      # Action resolution tests
+    ├── WinConditionTests.swift        # Win condition tests
+    ├── GameEngineTests.swift          # Engine integration tests
+    └── BotStrategyTests.swift         # Bot strategy tests
 ```
+
+> **Note**: The current `Package.swift` points to a flat `Tests/CyberSystemsTests` directory. Tests will be organized as individual files rather than subdirectories to maintain consistency with the Swift Package Manager structure.
 
 ### Testing Approach
 
