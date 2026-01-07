@@ -1,37 +1,62 @@
+# Cyber Systems — iOS Card Game
 
-# Virus The Game: Virus El Juego.
+A digital card game inspired by the mechanics of "VIRUS!", reskinned with a cybersecurity/computer systems theme.
 
-Juego de cartas competitivo masivo.
+## 📱 Platform
+- **Primary**: iOS 17+
+- **Architecture**: MVVM with SwiftUI
+- **Language**: Swift 5.9+
 
-## Precondiciones
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+## 🎮 Game Overview
 
-## Ojetivos
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+Build stable computer systems composed of 4 different modules while defending against malware and attacking opponents.
 
-## Mécanicas del Juego
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+### Win Condition
+First player to complete a stable system with 4 healthy modules of different colors wins.
 
-### Fases del Juego
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+### Card Types
+- **System Modules** (Blue, Red, Green, Yellow + Purple wildcard)
+- **Malware** (Infects matching-color modules)
+- **Defenses** (Protects and cures modules)
+- **System Operations** (Immediate effects on players/systems)
 
-## Tipos de Cartas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+## 📂 Project Structure
 
-### Órganos
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+```
+CyberSystems/
+├── Core/
+│   ├── Models/       # Pure data structures
+│   ├── Rules/        # Deterministic game logic
+│   ├── Engine/       # Game orchestration
+│   └── Bots/         # AI opponents
+├── UI/
+│   ├── Views/        # SwiftUI screens
+│   └── Components/   # Reusable UI elements
+└── Tests/            # Unit tests
+```
 
-### Virus
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+## 🚀 Getting Started
 
-### Medicinas 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+This project uses Swift Package Manager:
 
-### Tratamientos
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et odio dui. Vivamus dui ipsum, commodo at eleifend vel, feugiat a sapien. Pellentesque sit amet sem tempor, sodales odio vel.
+```bash
+cd CyberSystems
+swift build
+swift test
+```
 
+For iOS development, open in Xcode or use VS Code with Swift extensions.
 
-## Colaboradores 
+## 📋 Development Status
+
+See [`TASK.md`](TASK.md) for the current development roadmap.
+
+## 👥 Contributors
 - Axel Casas
 - Bruno Martínez
 - Ignacio Rivera
+
+## 📄 Documentation
+- [`CLAUDE.md`](CLAUDE.md) — AI agent operating context
+- [`CONTEXT.md`](CONTEXT.md) — Project technical context
+- [`TASK.md`](TASK.md) — Development backlog
