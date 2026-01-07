@@ -542,20 +542,26 @@ The project is currently in **Phase 0** (project setup) with only placeholder co
 ### Known Limitations
 
 #### 1. **No Actual Game Implementation Yet**
-- **Status**: Only project structure and placeholder code exist
+- **Issue**: Only project structure and placeholder code exist
 - **Impact**: Cannot play the game yet
-- **Plan**: Implement in phases (Models → Rules → Engine → UI → Bots)
-- **Timeline**: Phase 1-4 as outlined in module README files
+- **Plan**: Implement in phases as outlined in component README files:
+  - Phase 1: Core Models (Card, Player, GameState)
+  - Phase 2: Rules Engine (validation, resolution)
+  - Phase 3: Game Engine and Bots
+  - Phase 4: SwiftUI UI Layer
+- **Timeline**: See individual component README files in `Sources/Core/` and `Sources/UI/` subdirectories
 
-#### 2. **README Files in Source Directory**
-- **Issue**: Swift Package Manager warns about unhandled README.md files in `Sources/`
+#### 2. **Component README Files Generate Build Warnings**
+- **Issue**: Swift Package Manager warns about unhandled README.md files in component subdirectories (`Sources/Core/Models/`, `Sources/Core/Rules/`, etc.)
 - **Current Warning**:
   ```
   found 6 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
   ```
 - **Impact**: Build warnings (non-breaking)
-- **Solution**: Move README files to a separate `Docs/` directory or declare as resources in `Package.swift`
-- **Priority**: Low (cosmetic issue)
+- **Solution**: Either:
+  - Declare them as resources in `Package.swift`: `.target(name: "CyberSystems", resources: [.copy("Core/Models/README.md"), ...])`
+  - Move component documentation to a separate `Docs/` directory outside of `Sources/`
+- **Priority**: Low (cosmetic issue, does not affect functionality)
 
 #### 3. **No Persistence Layer**
 - **Issue**: No game state saving/loading implemented
