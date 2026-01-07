@@ -152,6 +152,8 @@ This project implements a **clean MVVM (Model-View-ViewModel)** architecture wit
   - Manage game flow (`GameEngine`)
   - No UI dependencies
 
+> **📝 Note on Code Examples**: Throughout this document, code examples are marked with `(Future)` to indicate files that will be created in upcoming development phases. These examples demonstrate the planned architecture and serve as implementation blueprints. The current codebase contains only placeholder files and directory structure.
+
 **Example Model Structure**:
 ```swift
 // Sources/Core/Models/GameState.swift (Future)
@@ -738,7 +740,7 @@ Tests/
     └── BotStrategyTests.swift         # Bot strategy tests
 ```
 
-> **Note**: The current `Package.swift` points to a flat `Tests/CyberSystemsTests` directory. Tests will be organized as individual files rather than subdirectories to maintain consistency with the Swift Package Manager structure.
+> **Note**: The current `Package.swift` points to a flat `Tests/CyberSystemsTests` directory. As development progresses, the placeholder `CyberSystemsTests.swift` will be expanded with additional test files (not subdirectories) to maintain consistency with the Swift Package Manager structure.
 
 ### Testing Approach
 

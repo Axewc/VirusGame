@@ -246,6 +246,8 @@ git clone https://github.com/Axewc/VirusGame.git
 cd VirusGame
 ```
 
+> **Note**: The repository is named `VirusGame`, but the Swift Package module is called `CyberSystems` (the in-game name for the reskinned version).
+
 ### Build the Project
 
 Using Swift Package Manager (command line):
