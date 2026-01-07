@@ -6,22 +6,24 @@ import PackageDescription
 let package = Package(
     name: "CyberSystems",
     platforms: [
-        .iOS(.v17)
+        .iOS(.v17),
+        .macOS(.v14)  // Added macOS support for command-line testing during development
     ],
     products: [
         .library(
             name: "CyberSystems",
-            targets: ["CyberSystems"])
+            targets: ["CyberSystems"]
+        )
     ],
     targets: [
         .target(
             name: "CyberSystems",
-            path: "."
+            path: "Sources"
         ),
         .testTarget(
             name: "CyberSystemsTests",
-            dependencies: ["CyberSystems"],
-            path: "Tests"
+            dependencies: [ "CyberSystems"],
+            path: "Tests/CyberSystemsTests"
         )
     ]
 )
